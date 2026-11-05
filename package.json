@@ -1,0 +1,13 @@
+{
+  "name": "jubin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jubin's personal homepage & portfolio",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

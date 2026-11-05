@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jubin — Portfolio</title>
+  <meta name="description" content="송주빈(Jubin Song)의 개인 홈페이지 · 포트폴리오" />
+  <meta property="og:title" content="Jubin — Portfolio" />
+  <meta property="og:description" content="이력, 인턴 경험, 프로젝트" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='68' font-size='58' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='700'>J</text></svg>" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">jubin<span>.</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#internships">Internship</a>
+      <a href="#projects">Projects</a>
+      <a href="#history">History</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="themeToggle" aria-label="테마 전환">◐</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow" id="heroRole"></p>
+      <h1 id="heroName"></h1>
+      <p class="tagline" id="heroTagline"></p>
+      <div class="hero-links" id="heroLinks"></div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title"><span>01</span>About</h2>
+      <div class="about-grid">
+        <div id="aboutText"></div>
+        <dl class="facts" id="facts"></dl>
+      </div>
+      <div class="skills" id="skills"></div>
+    </section>
+
+    <section id="internships" class="section">
+      <h2 class="section-title"><span>02</span>Internship</h2>
+      <div id="internList" class="stack"></div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title"><span>03</span>Projects</h2>
+      <div id="projectList" class="cards"></div>
+    </section>
+
+    <section id="history" class="section">
+      <h2 class="section-title"><span>04</span>History</h2>
+      <ol id="historyList" class="timeline"></ol>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2 class="section-title"><span>05</span>Contact</h2>
+      <p>함께 이야기 나누고 싶다면 편하게 연락주세요.</p>
+      <a class="mail" id="contactMail" href="#"></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="year"></span> · <span id="footerName"></span>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
