@@ -29,10 +29,16 @@ http
       res.writeHead(403);
       return res.end("Forbidden");
     }
+    if (!path.extname(file) && fs.existsSync(path.join(file, 'index.html'))) {
+      res.writeHead(301, { Location: urlPath + '/' });
+      return res.end();
+    }
     fs.readFile(file, (err, data) => {
       if (err) {
-        res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-        return res.end("Not found");
+        return fs.readFile(path.join(ROOT, '404.html'), (e2, page) => {
+          res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+          res.end(e2 ? 'Not found' : page);
+        });
       }
       res.writeHead(200, { "Content-Type": TYPES[path.extname(file).toLowerCase()] || "application/octet-stream" });
       res.end(data);

@@ -5,7 +5,8 @@
   "description": "Jubin's personal homepage & portfolio",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "pages": "node scripts/generate-pages.js"
   },
   "engines": {
     "node": ">=18"

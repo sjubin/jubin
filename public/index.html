@@ -4,70 +4,198 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jubin — Portfolio</title>
-  <meta name="description" content="송주빈(Jubin Song)의 개인 홈페이지 · 포트폴리오" />
+  <meta name="description" content="송주빈(Jubin Song)의 포트폴리오. 아이디어를 바로 쓰는 서비스로 만듭니다." />
   <meta property="og:title" content="Jubin — Portfolio" />
-  <meta property="og:description" content="이력, 인턴 경험, 프로젝트" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='68' font-size='58' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='700'>J</text></svg>" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta property="og:description" content="아이디어를 바로 쓰는 서비스로. 송주빈의 프로젝트와 이력." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0869aa" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#top">jubin<span>.</span></a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#internships">Internship</a>
-      <a href="#projects">Projects</a>
-      <a href="#history">History</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="theme" id="themeToggle" aria-label="테마 전환">◐</button>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="logo" href="/" data-logo>jubin<span>.</span></a>
+      <nav class="nav-pill" aria-label="주요 메뉴">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn-talk" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      <button class="menu-btn" id="menuOpen" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <p class="eyebrow" id="heroRole"></p>
-      <h1 id="heroName"></h1>
-      <p class="tagline" id="heroTagline"></p>
-      <div class="hero-links" id="heroLinks"></div>
-    </section>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="메뉴" hidden>
+    <div class="mobile-menu-top">
+      <a class="logo" href="/" data-logo>jubin<span>.</span></a>
+      <button class="menu-close" id="menuClose" aria-label="메뉴 닫기">✕</button>
+    </div>
+    <nav aria-label="모바일 메뉴">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
-    <section id="about" class="section">
-      <h2 class="section-title"><span>01</span>About</h2>
-      <div class="about-grid">
-        <div id="aboutText"></div>
-        <dl class="facts" id="facts"></dl>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero-wrap" aria-labelledby="heroTitle">
+      <div class="hero">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="clouds clouds-back" aria-hidden="true">
+          <span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span>
+        </div>
+        <svg class="plane floating-object" aria-hidden="true" viewBox="0 0 64 64"><path d="M4 30 60 6 44 58 32 38Z" fill="#fff"/><path d="M32 38 60 6 26 34Z" fill="#d6ecff"/><path d="M32 38 30 52 26 34Z" fill="#b9dcfb"/></svg>
+        <span class="orb floating-object" aria-hidden="true"></span>
+
+        <div class="hero-content">
+          <p class="hero-eyebrow reveal-hero" id="heroEyebrow"></p>
+          <h1 class="hero-title reveal-hero" id="heroTitle"></h1>
+          <p class="hero-desc reveal-hero" id="heroDesc"></p>
+          <div class="hero-actions reveal-hero">
+            <a class="btn btn-lime" href="#work">프로젝트 보기 <span class="btn-arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="#about">소개 보기</a>
+          </div>
+        </div>
+
+        <div class="hero-teaser reveal-hero" id="heroTeaser" aria-hidden="true"></div>
+
+        <div class="clouds clouds-front" aria-hidden="true">
+          <span class="cloud f1"></span><span class="cloud f2"></span><span class="cloud f3"></span><span class="cloud f4"></span><span class="cloud f5"></span>
+        </div>
       </div>
-      <div class="skills" id="skills"></div>
     </section>
 
-    <section id="internships" class="section">
-      <h2 class="section-title"><span>02</span>Internship</h2>
-      <div id="internList" class="stack"></div>
+    <!-- STATEMENT -->
+    <section class="statement container reveal" aria-labelledby="statementTitle">
+      <p class="label" id="statementLabel"></p>
+      <h2 class="statement-title" id="statementTitle"></h2>
     </section>
 
-    <section id="projects" class="section">
-      <h2 class="section-title"><span>03</span>Projects</h2>
-      <div id="projectList" class="cards"></div>
+    <!-- FEATURED -->
+    <section class="featured section" id="work" aria-labelledby="workTitle">
+      <div class="container section-head reveal">
+        <p class="label">Selected work</p>
+        <h2 class="section-title" id="workTitle">제가 만든 작은 세계들.</h2>
+        <p class="section-desc">기획부터 화면, 동작까지. 각 프로젝트에 담긴 고민과 결과를 소개합니다.</p>
+      </div>
+
+      <div class="carousel reveal" id="carousel" role="region" aria-roledescription="carousel" aria-label="대표 프로젝트">
+        <div class="carousel-stage" id="carouselStage"></div>
+        <div class="container carousel-bottom">
+          <div class="carousel-info" id="carouselInfo" aria-live="polite"></div>
+          <div class="carousel-controls">
+            <button class="ctrl" id="prevBtn" aria-label="이전 프로젝트">←</button>
+            <div class="dots" id="dots"></div>
+            <button class="ctrl" id="nextBtn" aria-label="다음 프로젝트">→</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="history" class="section">
-      <h2 class="section-title"><span>04</span>History</h2>
-      <ol id="historyList" class="timeline"></ol>
+    <!-- ABOUT -->
+    <section class="about section container" id="about" aria-labelledby="aboutTitle">
+      <div class="about-grid">
+        <div class="about-visual reveal" aria-hidden="true">
+          <span class="blob"></span>
+          <div class="object">
+            <div class="laptop">
+              <div class="laptop-screen"><span></span><span></span><span></span></div>
+              <div class="laptop-base"></div>
+            </div>
+            <span class="ball ball-a"></span>
+            <span class="ball ball-b"></span>
+            <svg class="cursor floating-object" viewBox="0 0 32 32"><path d="M6 3 26 17 16 18.5 11 28Z" fill="#171918" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="chip chip-a">Curious</span>
+          <span class="chip chip-b">Builder</span>
+        </div>
+        <div class="about-body reveal">
+          <p class="label">About me</p>
+          <h2 class="section-title" id="aboutTitle"></h2>
+          <div class="about-text" id="aboutText"></div>
+          <ul class="skill-list" id="skillList" aria-label="역량"></ul>
+          <dl class="facts" id="facts"></dl>
+        </div>
+      </div>
+      <div class="mini-cards reveal" id="miniCards"></div>
+
+      <div class="experience reveal">
+        <div class="exp-col">
+          <h3 class="exp-title">Internship</h3>
+          <div id="internList"></div>
+        </div>
+        <div class="exp-col">
+          <h3 class="exp-title">History</h3>
+          <ol class="timeline" id="historyList"></ol>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <h2 class="section-title"><span>05</span>Contact</h2>
-      <p>함께 이야기 나누고 싶다면 편하게 연락주세요.</p>
-      <a class="mail" id="contactMail" href="#"></a>
+    <!-- ALL PROJECTS -->
+    <section class="all section container" aria-labelledby="allTitle">
+      <div class="section-head section-head-left reveal">
+        <p class="label">More to explore</p>
+        <h2 class="section-title" id="allTitle">더 다양한 작업들.</h2>
+      </div>
+      <div class="grid" id="projectGrid"></div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process section container" id="process" aria-labelledby="processTitle">
+      <div class="section-head section-head-left reveal">
+        <p class="label">How I work</p>
+        <h2 class="section-title" id="processTitle">좋은 결과를 만드는 과정.</h2>
+      </div>
+      <ol class="process-list" id="processList"></ol>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-wrap section" id="contact" aria-labelledby="contactTitle">
+      <div class="contact reveal">
+        <div class="clouds" aria-hidden="true"><span class="cloud k1"></span><span class="cloud k2"></span></div>
+        <p class="label label-light">Contact</p>
+        <h2 class="contact-title" id="contactTitle">다음 이야기를<br />함께 만들어볼까요?</h2>
+        <p class="contact-desc">협업 제안이나 궁금한 점이 있다면 편하게 연락해 주세요.</p>
+        <p class="contact-mail" id="contactMail"></p>
+        <div class="contact-actions">
+          <a class="btn btn-lime" id="mailBtn" href="#">이메일 보내기 <span class="btn-arrow" aria-hidden="true">↗</span></a>
+          <button class="btn btn-ghost" id="copyBtn" type="button">이메일 주소 복사</button>
+        </div>
+        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+        <div class="contact-links" id="contactLinks"></div>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <span id="year"></span> · <span id="footerName"></span>
+  <footer class="footer container">
+    <div class="footer-top">
+      <div>
+        <strong class="footer-name" id="footerName"></strong>
+        <p class="footer-role" id="footerRole"></p>
+      </div>
+      <ul class="footer-links" id="footerLinks"></ul>
+    </div>
+    <div class="footer-bottom">
+      <span id="copyright"></span>
+      <a href="#main" class="to-top">Back to top ↑</a>
+    </div>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

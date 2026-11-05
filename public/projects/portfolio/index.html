@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>jubin — 포트폴리오 — Jubin</title>
+  <meta name="description" content="지금 보고 계신 사이트. 하늘과 구름을 콘셉트로 직접 디자인하고 구현한 개인 포트폴리오." />
+  <meta name="theme-color" content="#0869aa" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#detail">본문으로 바로가기</a>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="logo" href="/">jubin<span>.</span></a>
+      <nav class="nav-pill" aria-label="주요 메뉴">
+        <a href="/#work">Work</a><a href="/#about">About</a><a href="/#process">Process</a><a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn-talk" href="/#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      <button class="menu-btn" id="menuOpen" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="메뉴" hidden>
+    <div class="mobile-menu-top">
+      <a class="logo" href="/">jubin<span>.</span></a>
+      <button class="menu-close" id="menuClose" aria-label="메뉴 닫기">✕</button>
+    </div>
+    <nav aria-label="모바일 메뉴">
+      <a href="/#work">Work</a><a href="/#about">About</a><a href="/#process">Process</a><a href="/#contact">Contact</a>
+    </nav>
+  </div>
+  <main id="detail"></main>
+  <footer class="footer container">
+    <div class="footer-top">
+      <div><strong class="footer-name" id="footerName"></strong><p class="footer-role" id="footerRole"></p></div>
+      <ul class="footer-links" id="footerLinks"></ul>
+    </div>
+    <div class="footer-bottom"><span id="copyright"></span><a href="#detail" class="to-top">Back to top ↑</a></div>
+  </footer>
+  <script src="/js/data.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/project.js"></script>
+</body>
+</html>
